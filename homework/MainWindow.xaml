@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:homework"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Background="LightGray" Grid.Row="0">
-            <Button Content="Подключить" Height="30" Width="150" FontSize="15" Background="LightGreen" Margin="10"/>
-            <Button Content="Отключить" Height="30" FontSize="15" Width="150" Background="LightPink" Margin="10"/>
+        <StackPanel Name="ConnectionBack" Orientation="Horizontal" Background="LightGray" Grid.Row="0">
+            <Button Content="Подключить" Height="30" Width="150" FontSize="15" Background="LightGreen" Margin="10" Click="Button_Click"/>
+            <Button Content="Отключить" Height="30" FontSize="15" Width="150" Background="LightPink" Margin="10" Click="Button_Click_1"/>
             <TextBlock Name="ConnectionText" Width="300" Margin="20" FontSize="15" VerticalAlignment="Center" Text="Сервер отключен" />
         </StackPanel>
         <Grid Grid.Row="1">
@@ -21,12 +21,37 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <Button Content="Отображение всей информации из таблицы с овощами и фруктами" HorizontalAlignment="Left" FontSize="14"/>
-                <Button Content="Отображение всех названий овощей и фруктов" HorizontalAlignment="Left" FontSize="14"/>
-                <Button Content="Отображение всех цветов" HorizontalAlignment="Left" FontSize="14"/>
-                <Button Content="Показать максимальную калорийность" HorizontalAlignment="Left" FontSize="14"/>
+            <StackPanel Grid.Column="0" Margin="10">
+                <Button Name="Fulltable" Content="Отображение всей информации из таблицы с овощами и фруктами" HorizontalAlignment="Left" FontSize="14" Click="Fulltable_Click" />
+                <Button Name="FruitandVeget" Content="Отображение всех названий овощей и фруктов" HorizontalAlignment="Left" FontSize="14" Click="FruitandVeget_Click"/>
+                <Button Name="Color" Content="Отображение всех цветов" HorizontalAlignment="Left" FontSize="14" Click="Color_Click"/>
+                <Button Name="MaxColories" Content="Показать максимальную калорийность" HorizontalAlignment="Left" FontSize="14" Click="MaxColories_Click"/>
+                <Button Name="MinColories" Content="Показать минимальную калорийность" HorizontalAlignment="Left" FontSize="14" Click="MinColories_Click"/>
+                <Button Name="MidColories"  Content="Показать среднюю калорийность" HorizontalAlignment="Left" FontSize="14" Click="MidColories_Click"/>
+                <Button Name="CountVeg" Content="Показать количество овощей" HorizontalAlignment="Left" FontSize="14" Click="CountVeg_Click"/>
+                <Button Name="CountFruit" Content="Показать количество фруктов" HorizontalAlignment="Left" FontSize="14" Click="CountFruit_Click"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="CountColor" Content="Показать количество овощей и фруктов заданного цвета" HorizontalAlignment="Left" FontSize="14" Click="CountColor_Click"/>
+                    <TextBox Name="colorinput" Margin="5" Width="100"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="MinCalorie" Content="Показать овощи и фрукты с калорийностью ниже указанной" HorizontalAlignment="Left" FontSize="14" Click="MinCalorie_Click"/>
+                    <TextBox Name="MinCalorieText" Margin="5" Width="100"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="MaxCalorie" Content="Показать овощи и фрукты с калорийностью выше указанной" HorizontalAlignment="Left" FontSize="14" Click="MaxCalorie_Click"/>
+                    <TextBox Name="MaxCalorieText" Margin="5" Width="100"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="DiaCalorie" Content="Показать овощи и фрукты с калорийностью в указанном диапазоне" HorizontalAlignment="Left" FontSize="14" Click="DiaCalorie_Click"/>
+                    <TextBox Name="Min" Margin="5" Width="100"/>
+                    <TextBox Name="Max" Margin="5" Width="100"/>
+                </StackPanel>
+                <Button Name="YellowOrRed" Content="Показать все овощи и фрукты, у которых цвет желтый или красный" HorizontalAlignment="Left" FontSize="14" Click="YellowOrRed_Click"/>
             </StackPanel>
+            <Grid Grid.Column="1">
+                <TextBlock FontSize="15" Name="output"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
