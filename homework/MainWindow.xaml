@@ -1,0 +1,32 @@
+﻿<Window x:Class="homework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:homework"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="LightGray" Grid.Row="0">
+            <Button Content="Подключить" Height="30" Width="150" FontSize="15" Background="LightGreen" Margin="10"/>
+            <Button Content="Отключить" Height="30" FontSize="15" Width="150" Background="LightPink" Margin="10"/>
+            <TextBlock Name="ConnectionText" Width="300" Margin="20" FontSize="15" VerticalAlignment="Center" Text="Сервер отключен" />
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Button Content="Отображение всей информации из таблицы с овощами и фруктами" HorizontalAlignment="Left" FontSize="14"/>
+                <Button Content="Отображение всех названий овощей и фруктов" HorizontalAlignment="Left" FontSize="14"/>
+                <Button Content="Отображение всех цветов" HorizontalAlignment="Left" FontSize="14"/>
+                <Button Content="Показать максимальную калорийность" HorizontalAlignment="Left" FontSize="14"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
